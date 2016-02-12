@@ -31,5 +31,7 @@ Abgabe: Protokoll mit Designüberlegungen / Umsetzung / Testszenarien, Sourcecod
 ## Quellen
 
 [1] "Praktische Arbeit 2 zur Vorlesung 'Verteilte Systeme' ETH Zürich, SS 2002", Prof.Dr.B.Plattner, übernommen von Prof.Dr.F.Mattern (http://www.tik.ee.ethz.ch/tik/education/lectures/VS/SS02/Praktikum/aufgabe2.pdf)
+
 [2] http://www.tik.ee.ethz.ch/education/lectures/VS/SS02/Praktikum/loesung2.zip
+
 [3] https://www.inlab.de/articles/free-and-open-source-load-balancing-software-and-projects.html
