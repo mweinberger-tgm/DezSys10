@@ -12,11 +12,11 @@
 \gdef\myauthor{Thomas Taschner \& Michael Weinberger}
 
 \gdef\myversion{0.1}
-\gdef\mybegin{\today}
+\gdef\mybegin{12. Februar 2016}
 \gdef\myfinish{\today}
 
 \gdef\mygrade{Note:}
-\gdef\myteacher{Betreuer: Th.Micheler}
+\gdef\myteacher{Betreuer: Borko/Micheler}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -61,7 +61,27 @@
 \pagestyle{fancy}
 
 %\vspace{-0.5cm}
-asdf
+\section{Einführung}
+\subsection{Aufgabenstellung}
+Es soll ein Load Balancer mit mindestens 2 unterschiedlichen Load-Balancing Methoden (jeweils 6 Punkte) implementiert werden (ähnlich dem PI Beispiel \cite{Angabe1}; Lösung zum Teil veraltet \cite{Angabe2}). Eine Kombination von mehreren Methoden ist möglich. Die Berechnung bzw. das Service ist frei wählbar! \\
+Folgende Load Balancing Methoden stehen zur Auswahl:
+\begin{itemize}
+	\item Weighted Distribution
+	\item Least Connection
+	\item Response Time
+	\item Server Probes
+\end{itemize}
+Um die Komplexität zu steigern, soll zusätzlich eine "Session Persistence" (3 Punkte) implementiert werden. \\
+Vertiefend soll eine Open-Source Applikation aus folgender Liste ausgewählt und installiert werden. (3 Punkte)
+https://www.inlab.de/articles/free-and-open-source-load-balancing-software-and-projects.html
+\subsection{Auslastung}
+Es sollen die einzelnen Server-Instanzen in folgenden Punkten belastet (Memory, CPU Cycles) werden können.
+Bedenken Sie dabei, dass die einzelnen Load Balancing Methoden unterschiedlich auf diese Auslastung reagieren werden. Dokumentieren Sie dabei aufkommenden Probleme ausführlich.
+\subsection{Tests}
+Die Tests sollen so aufgebaut sein, dass in der Gruppe jedes Mitglied mehrere Server fahren und ein Gruppenmitglied mehrere Anfragen an den Load Balancer stellen. Für die Abnahme wird empfohlen, dass jeder Server eine Ausgabe mit entsprechenden Informationen ausgibt, damit die Verteilung der Anfragen demonstriert werden kann.
+\subsection{Modalitäten}
+Gruppenarbeit: 2 Personen
+Abgabe: Protokoll mit Designüberlegungen / Umsetzung / Testszenarien, Sourcecode (mit allen notwendigen Bibliotheken), Java-Doc, Build-Management-Tool (ant oder maven), Gepackt als ausführbares JAR
 
 \clearpage
 
