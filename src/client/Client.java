@@ -1,7 +1,9 @@
 package client;
 
-import java.net.*;
+import balancer.Registry;
+
 import java.io.*;
+import java.net.Socket;
 
 public class Client {
     public static void main(String[] args) {
@@ -21,6 +23,8 @@ public class Client {
                 DataInputStream in = new DataInputStream(inFromServer);
                 System.out.println("Pi berechnet auf " + digits + " Stellen: " + in.readUTF());
                 client.close();
+
+                System.out.println(Registry.getInstance().toString());
             } catch (IOException e) {
                 e.printStackTrace();
             }

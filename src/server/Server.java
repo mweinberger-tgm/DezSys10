@@ -1,5 +1,7 @@
 package server;
 
+import balancer.Registry;
+
 import java.net.*;
 import java.io.*;
 
@@ -15,7 +17,14 @@ public class Server implements Runnable {
 
     public Server(int port) throws IOException {
         serverSocket = new ServerSocket(port);
-        serverSocket.setSoTimeout(10000);
+        //serverSocket.setSoTimeout(10000);
+
+        ServerInfo current = new ServerInfo();
+        current.setIp(Inet4Address.getLocalHost().getHostAddress());
+        current.setPort(port);
+
+        Registry.getInstance().addServer(current);
+        System.out.println(Registry.getInstance().toString());
     }
 
     public void run() {
@@ -41,7 +50,7 @@ public class Server implements Runnable {
     }
 
     public static void main(String[] args) {
-        int port = 3333;
+        int port = Integer.parseInt(args[0]);
         try {
             Thread t = new Thread(new Server(port));
             t.start();
