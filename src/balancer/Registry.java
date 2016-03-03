@@ -1,5 +1,6 @@
 package balancer;
 
+
 import server.ServerInfo;
 
 import java.util.ArrayList;
@@ -10,32 +11,36 @@ import java.util.ArrayList;
  */
 public class Registry {
 
-    private static Registry instance;
+    private static Registry instance = null;
     private ArrayList<ServerInfo> serverlist;
 
-    private Registry(){
-        serverlist = new ArrayList<>();
+    private Registry() {
+        this.serverlist = new ArrayList<>();
     }
 
-    public static Registry getInstance() {
+    public static synchronized Registry getInstance() {
         if (instance == null) {
-            instance = new Registry ();
+            instance = new Registry();
         }
         return instance;
     }
 
     public void addServer(ServerInfo server) {
-        serverlist.add(server);
+        this.serverlist.add(server);
     }
 
     public void removeServer(ServerInfo server) {
-        serverlist.remove(server);
+        this.serverlist.remove(server);
+    }
+
+    public ArrayList<ServerInfo> getList() {
+        return this.serverlist;
     }
 
     public String toString() {
         String out = "";
-        for (int i=0; i < serverlist.size(); i++) {
-            out += ""+serverlist.get(i).getIp() + ":"+serverlist.get(i).getPort() + "\n";
+        for (int i = 0; i < this.serverlist.size(); i++) {
+            out += "" + this.serverlist.get(i).getIp() + ":" + this.serverlist.get(i).getPort() + "\n";
         }
         return out;
     }
