@@ -1,7 +1,5 @@
 package server;
 
-import java.net.*;
-import java.io.*;
 import java.math.BigDecimal;
 
 public class ServerThread implements Runnable
@@ -19,7 +17,7 @@ public class ServerThread implements Runnable
 	
 	public void run()
 	{
-		PI calc = new PI();
+		PiCalculator calc = new PiCalculator();
 		out = calc.pi(digits);
 		//System.out.println(out.toString());
 	}
