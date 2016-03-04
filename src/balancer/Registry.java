@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class Registry {
 
-    private static Registry instance = new Registry();
+    private static Registry INSTANCE = new Registry();
     private List<ServerInfo> serverlist;
 
     private Registry() {
@@ -19,7 +19,7 @@ public class Registry {
     }
 
     public static synchronized Registry getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public void addServer(ServerInfo server) {
