@@ -24,6 +24,8 @@ public class Server implements Runnable {
         current.setPort(port);
 
         Registry.getInstance().addServer(current);
+        System.out.println(Registry.getInstance().toString());
+        System.out.println(Registry.getInstance().hashCode());
     }
 
     public void run() {

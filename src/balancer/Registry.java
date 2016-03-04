@@ -3,7 +3,7 @@ package balancer;
 
 import server.ServerInfo;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by Michael on 03.03.2016.
@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class Registry {
 
-    private static Registry instance = null;
-    private ArrayList<ServerInfo> serverlist;
+    private static Registry instance;
+    private List<ServerInfo> serverlist;
 
     private Registry() {
         this.serverlist = new ArrayList<>();
@@ -33,7 +33,7 @@ public class Registry {
         this.serverlist.remove(server);
     }
 
-    public ArrayList<ServerInfo> getList() {
+    public List<ServerInfo> getList() {
         return this.serverlist;
     }
 
@@ -43,5 +43,14 @@ public class Registry {
             out += "" + this.serverlist.get(i).getIp() + ":" + this.serverlist.get(i).getPort() + "\n";
         }
         return out;
+    }
+
+    public static void main(String[] a) {
+        ServerInfo asdf = new ServerInfo();
+        asdf.setIp("192.168.123.123");
+        asdf.setPort(1234);
+        Registry.getInstance().addServer(asdf);
+        System.out.println(Registry.getInstance().hashCode());
+        //System.out.println(Registry.getInstance().toString());
     }
 }
