@@ -19,6 +19,7 @@ import java.net.SocketTimeoutException;
 
 public class Server implements Runnable {
     private ServerSocket serverSocket;
+    private Registry instance;
 
     public Server(int port) throws IOException {
         serverSocket = new ServerSocket(port);
@@ -28,7 +29,7 @@ public class Server implements Runnable {
         current.setIp(Inet4Address.getLocalHost().getHostAddress());
         current.setPort(port);
 
-        Registry instance = Registry.getInstance();
+        instance = Registry.getInstance();
 
         instance.addServer(current);
         System.out.println(instance.toString());
