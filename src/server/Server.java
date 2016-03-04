@@ -2,8 +2,13 @@ package server;
 
 import balancer.Registry;
 
-import java.net.*;
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Inet4Address;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
 
 /**
  * @author Thomas Taschner & Michael Weinberger
@@ -23,9 +28,11 @@ public class Server implements Runnable {
         current.setIp(Inet4Address.getLocalHost().getHostAddress());
         current.setPort(port);
 
-        Registry.getInstance().addServer(current);
-        System.out.println(Registry.getInstance().toString());
-        System.out.println(Registry.getInstance().hashCode());
+        Registry instance = Registry.getInstance();
+
+        instance.addServer(current);
+        System.out.println(instance.toString());
+        System.out.println(instance.hashCode());
     }
 
     public void run() {

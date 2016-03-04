@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class Registry {
 
-    private static Registry instance;
+    private static Registry instance = new Registry();
     private List<ServerInfo> serverlist;
 
     private Registry() {
@@ -19,9 +19,6 @@ public class Registry {
     }
 
     public static synchronized Registry getInstance() {
-        if (instance == null) {
-            instance = new Registry();
-        }
         return instance;
     }
 
@@ -45,12 +42,13 @@ public class Registry {
         return out;
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] a) throws InterruptedException {
         ServerInfo asdf = new ServerInfo();
         asdf.setIp("192.168.123.123");
         asdf.setPort(1234);
         Registry.getInstance().addServer(asdf);
         System.out.println(Registry.getInstance().hashCode());
+        Thread.sleep(999999999);
         //System.out.println(Registry.getInstance().toString());
     }
 }
