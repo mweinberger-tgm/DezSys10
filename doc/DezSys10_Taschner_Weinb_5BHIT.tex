@@ -62,7 +62,9 @@
 
 %\vspace{-0.5cm}
 \section{Einführung}
+\label{sec:Einführung}
 \subsection{Aufgabenstellung}
+\label{sec:Aufgabenstellung}
 Es soll ein Load Balancer mit mindestens 2 unterschiedlichen Load-Balancing Methoden (jeweils 6 Punkte) implementiert werden (ähnlich dem PI Beispiel \cite{Angabe1}; Lösung zum Teil veraltet \cite{Angabe2}). Eine Kombination von mehreren Methoden ist möglich. Die Berechnung bzw. das Service ist frei wählbar! \\
 Folgende Load Balancing Methoden stehen zur Auswahl:
 \begin{itemize}
@@ -71,20 +73,43 @@ Folgende Load Balancing Methoden stehen zur Auswahl:
 	\item Response Time
 	\item Server Probes
 \end{itemize}
-Um die Komplexität zu steigern, soll zusätzlich eine "'Session Persistence"' (3 Punkte) implementiert werden. \\
-Vertiefend soll eine Open-Source Applikation aus folgender Liste ausgewählt und installiert werden. (3 Punkte) \cite{Angabe3}
+Um die Komplexität zu steigern, soll zusätzlich eine "'Session Persistence"' (2 Punkte) implementiert werden. \\
+Vertiefend soll eine Open-Source Applikation aus folgender Liste ausgewählt und installiert werden. (2 Punkte)\cite{Angabe3}
+
 \subsection{Auslastung}
+\label{sec:Auslastung}
 Es sollen die einzelnen Server-Instanzen in folgenden Punkten belastet (Memory, CPU Cycles) werden können.
 Bedenken Sie dabei, dass die einzelnen Load Balancing Methoden unterschiedlich auf diese Auslastung reagieren werden. Dokumentieren Sie dabei aufkommenden Probleme ausführlich.
+
 \subsection{Tests}
+\label{sec:Tests}
 Die Tests sollen so aufgebaut sein, dass in der Gruppe jedes Mitglied mehrere Server fahren und ein Gruppenmitglied mehrere Anfragen an den Load Balancer stellen. Für die Abnahme wird empfohlen, dass jeder Server eine Ausgabe mit entsprechenden Informationen ausgibt, damit die Verteilung der Anfragen demonstriert werden kann.
+
 \subsection{Modalitäten}
+\label{sec:Modalitäten}
 Gruppenarbeit: 2 Personen \\
 Abgabe: Protokoll mit Designüberlegungen / Umsetzung / Testszenarien, Sourcecode (mit allen notwendigen Bibliotheken), Java-Doc, Build-Management-Tool (ant oder maven), Gepackt als ausführbares JAR
 
 \clearpage
 
+\uline{Bewertung}: 16 Punkte
+
+\begin{list}{-}
+\item 2 Load Balancing Methoden (jeweils 6 Punkte)
+\item Session Persistenz (2 Punkte)
+\item Einsatz Load Balancing Software (2 Punkte)
+\end{list}
+
+Viel Erfolg!
+
+\clearpage
+
 \section{Ergebnisse}
+\label{sec:Ergebnisse}
+
+\subsection{Einsatz von Load Balancing Software}
+\label{sec:Einsatz von Load Balancing Software}
+Im Rahmen dieser Übung wurde die Load Balancing Software HAProxy\cite{HAProxy}
 
 \newpage
 
